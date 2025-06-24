@@ -3,60 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>About Me - My Academic Page</title>
+    <!-- Bulma CSS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
     <style>
-        .profile-img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
+        body {
+            font-family: 'Inter', sans-serif;
         }
-        .social-links a {
-            display: block;
-            margin-bottom: 5px;
+        .hero.is-fullheight-with-navbar {
+            /* Custom class to account for navbar height if needed, though Bulma usually handles it */
+            min-height: calc(100vh - 3.25rem); /* Adjust based on Bulma navbar height */
+        }
+        .profile-image-container {
+            width: 320px; /* Custom width for the image container */
+            height: 480px; /* Custom height for the image container */
+            overflow: hidden;
+            margin: 0 auto 1.5rem auto; /* Center image and add bottom margin */
+        }
+        .profile-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image covers the area without distortion */
+        }
+        .social-links .button {
+            width: 100%; /* Make buttons full width in their column */
+            margin-bottom: 0.5rem;
+        }
+        @media screen and (min-width: 769px) { /* For desktop, adjust image size */
+            .profile-image-container {
+                width: 320px;
+                height: 480px;
+            }
+        }
+        .section-padding {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+        .organizations-list ul {
+            list-style: disc inside; /* Default disc bullet, inside the text flow */
+        }
+        .organizations-list ul li {
+            margin-bottom: 0.5rem;
         }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top rounded-bottom">
+    <nav class="navbar is-dark is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="container">
-            <a class="navbar-brand" href="index.html">My Academic Page</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">About Me</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="publications.html">Publications</a>
-                    </li>
-                    <!-- Future navigation items can be added here -->
-                </ul>
+            <div class="navbar-brand">
+                <a class="navbar-item" href="#about">
+                    <strong class="has-text-white">Dr. Andrew L. Liu</strong>
+                </a>
+
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-end">
+                    <a class="navbar-item is-active" href="#about">
+                        About Me
+                    </a>
+                    <a class="navbar-item" href="publications.html">
+                        Publications
+                    </a>
+                    <!-- Future links can go here -->
+                </div>
             </div>
         </div>
     </nav>
 
-    <main class="container mt-5 pt-5">
-        <section id="about" class="row align-items-center mb-5">
-            <div class="col-md-4 text-center">
-                <img src="https://via.placeholder.com/250" class="img-fluid rounded-circle mb-3 profile-img" alt="Profile Picture">
-                <div class="social-links">
-                    <a href="https://github.com/yourusername" class="btn btn-dark btn-sm mb-2" target="_blank">GitHub</a>
-                    <a href="mailto:youremail@example.com" class="btn btn-dark btn-sm mb-2">Email</a>
-                    <a href="https://www.linkedin.com/in/yourprofile" class="btn btn-dark btn-sm" target="_blank">LinkedIn</a>
+    <section id="about" class="hero is-fullheight-with-navbar is-light">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns is-vcentered is-multiline">
+                    <div class="column is-4 has-text-centered">
+                        <figure class="image profile-image-container">
+                            <img src="photo-andrew-liu.jpg" alt="Profile Picture">
+                        </figure>
+                        <div class="buttons is-centered is-grouped-multiline is-fullwidth-mobile mt-4">
+                            <a href="https://github.com/yourusername" target="_blank" class="button is-dark is-rounded is-small">
+                                GitHub
+                            </a>
+                            <a href="mailto:youremail@example.com" class="button is-dark is-rounded is-small">
+                                Email
+                            </a>
+                            <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="button is-dark is-rounded is-small">
+                                LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                    <div class="column is-8">
+                        <h1 class="title is-1">About Dr. Andrew Liu</h1>
+                        <p class="content is-medium">I am an associate professor at Purdue University in Industrial Engineering. My research interests are energy and environmental markets; systems and policy modeling and analysis; decentralized algorithms of game theory and their applications in smart grid; and optimization, complementarity problems, and variational inequalities, with applications to game theory and industrial organization.</p>
+                        <p class="content is-medium">I started at Purdue University in August 2009 as an assistant professor, and was promoted to associate professor in August of 2016.</p>
+                        <p class="content is-medium">Before coming to Purdue Industrial Engineering, I was a Senior Associate at ICF International in Fairfax, VA, from September 2005 to August 2009.</p>
+                        <p class="content is-medium">I hold a PhD in Applied Mathematics and Statistics (2009) from the Department of Applied Mathematics and Statistics at Johns Hopkins University; an MS in Mathematical Sciences (2002) from the Department of Mathematical Sciences at Johns Hopkins University; and a BS in Applied Mathematics (2000) from the Department of Applied Mathematics, Beijing Institute of Technology.</p>
+                        <p class="content is-medium">My interdisciplinary research includes works on energy and environmental markets, systems and policy modeling and analysis; optimization, decentralized algorithms, game theory and their applications in smart energy grid.</p>
+                        <div class="content organizations-list mt-5 is-medium">
+                            <p class="content is-medium">I belong to these organizations:</p>
+                            <ul>
+                                <li>Institute for Operations Research and Management Science (INFORMS)</li>
+                                <li>Society for Industrial and Applied Mathematics (SIAM)</li>
+                                <li>International Association of Energy Economics (IAEE)</li>
+                                <li>IEEE Power & Energy Society (PES)</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-8">
-                <h1 class="mb-4">About Me</h1>
-                <p>Welcome to my academic personal website! I am [Your Name], a [Your Academic Standing/Role, e.g., Ph.D. Candidate, Postdoctoral Researcher, Undergraduate Student] in the Department of [Your Department] at [Your University]. My research interests broadly lie in [Your Primary Field of Interest], with a specific focus on [Mention a few specific areas or keywords, e.g., machine learning applications in bioinformatics, quantum computing algorithms, or sustainable energy systems].</p>
-                <p>I am passionate about [Mention a passion related to your academic work or a skill, e.g., solving complex problems, developing innovative solutions, or contributing to open-source projects]. Through my work, I aim to [State a goal or impact you wish to make, e.g., advance our understanding of X, develop new technologies for Y, or apply theoretical concepts to real-world challenges].</p>
-                <p>Prior to my current role, I received my [Your Previous Degree, e.g., Master's in Computer Science] from [Previous University]. This foundation has equipped me with a strong background in [Relevant skills or knowledge from previous education, e.g., data analysis, statistical modeling, or experimental design]. I am always eager to collaborate on interdisciplinary projects and explore new frontiers in [Your Field].</p>
-            </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Get all "navbar-burger" elements
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+            // Check if there are any navbar burgers
+            if ($navbarBurgers.length > 0) {
+                // Add a click event on each of them
+                $navbarBurgers.forEach(el => {
+                    el.addEventListener('click', () => {
+                        // Get the target from the "data-target" attribute
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+
+                        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                        el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>

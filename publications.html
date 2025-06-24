@@ -4,181 +4,489 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publications - My Academic Page</title>
-    <!-- Bootstrap CSS CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bulma CSS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <style>
+        /* Define custom CSS variables for the color palette */
+        :root {
+            --boilermaker-gold: #CFB991;
+            --black: #000000;
+            --aged: #8E6F3E;
+            --rush: #DAAA00;
+            --field: #DDB945;
+            --dust: #EBD99F;
+            --steel: #555960;
+            --cool-gray: #6F727B;
+            --railway-gray: #9D9795;
+            --steam: #C4BFC0;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
-            padding-top: 56px; /* Adjust for fixed navbar height */
+            padding-top: 3.25rem; /* Adjust for fixed Bulma navbar height */
+            background-color: var(--steam); /* Light gray background */
+            color: var(--steel); /* Default text color */
         }
-        .navbar-brand {
-            font-weight: bold;
+        
+        /* Navbar Styling */
+        .navbar.is-dark {
+            background-color: var(--black); /* Black navbar background */
         }
+        .navbar-brand .navbar-item strong {
+            color: var(--boilermaker-gold); /* Boilermaker Gold brand text */
+        }
+        .navbar-item.is-active {
+            background-color: var(--aged); /* Aged color for active nav item background */
+            color: var(--black); /* Black text for active nav item */
+        }
+        .navbar-item:not(.is-active):hover {
+            background-color: var(--steel); /* Steel for hover background */
+            color: white; /* White text on hover */
+        }
+        .navbar-item {
+            color: var(--steam); /* Steam for default nav item text */
+        }
+
+        /* Hero Section Styling */
+        .hero.is-small {
+            background-color: var(--dust); /* Dust color for hero background */
+            border-bottom: 1px solid var(--railway-gray); /* Railway Gray border */
+        }
+        .hero .title, .hero .subtitle {
+            color: var(--black); /* Black text for hero titles */
+        }
+
+        /* Publication Sections */
+        .publication-section {
+            padding: 2.5rem 0;
+            border-bottom: 1px solid var(--railway-gray); /* Railway Gray border for sections */
+        }
+        .publication-section:last-of-type {
+            border-bottom: none;
+        }
+        .publication-section .title {
+            color: var(--aged); /* Aged color for section titles */
+        }
+        
+        /* Publication Items */
         .publication-item {
             margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid #eee;
         }
         .publication-item:last-child {
-            border-bottom: none;
             margin-bottom: 0;
-            padding-bottom: 0;
         }
         .publication-title {
             font-weight: 600;
-            color: #333;
+            color: var(--steel); /* Steel for publication titles */
         }
+        .publication-details {
+            font-size: 0.95rem;
+            color: var(--cool-gray); /* Cool Gray for publication details */
+            line-height: 1.4;
+        }
+
+        /* Button Styling */
+        .button.is-outlined.is-rounded.is-black {
+            color: var(--boilermaker-gold);
+            border-color: var(--boilermaker-gold);
+            background-color: transparent;
+        }
+        .button.is-outlined.is-rounded.is-black:hover {
+            background-color: var(--boilermaker-gold);
+            color: var(--black);
+            border-color: var(--boilermaker-gold);
+        }
+
+        /* Sticky Table of Contents Sidebar */
         .sticky-sidebar {
-            position: -webkit-sticky; /* For Safari */
             position: sticky;
-            top: 70px; /* Offset from the top, considering navbar height */
-            padding-top: 15px;
-            padding-bottom: 15px;
-            background-color: #f8f9fa;
-            border-radius: 0.5rem;
-            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-            max-height: calc(100vh - 85px); /* Max height to prevent overflow, accounting for top/bottom space */
+            top: 4.5rem; /* Adjust this value based on navbar height + desired padding */
+            padding: 1.5rem;
+            background-color: white; /* White background for sidebar */
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-height: calc(100vh - 6rem); /* Max height to prevent overflow, accounting for top/bottom space */
             overflow-y: auto; /* Enable scrolling for sidebar if content is too long */
-            z-index: 1; /* Ensure it's above other elements if necessary */
+            z-index: 10;
         }
-        .sticky-sidebar .nav-link {
-            color: #495057;
-            padding: 0.5rem 1rem;
-            border-radius: 0.3rem;
-            transition: background-color 0.2s ease-in-out;
+        .sticky-sidebar .menu-label {
+            color: var(--black); /* Black for menu label */
         }
-        .sticky-sidebar .nav-link:hover {
-            background-color: #e9ecef;
-            color: #007bff;
+        .sticky-sidebar .menu-list a {
+            padding: 0.75rem 1rem;
+            border-radius: 4px;
+            color: var(--steel); /* Steel for default link text */
+            transition: background-color 0.2s ease;
         }
-        .sticky-sidebar .nav-link.active {
-            background-color: #007bff;
-            color: white;
+        .sticky-sidebar .menu-list a:hover {
+            background-color: var(--steam); /* Steam for link hover background */
+            color: var(--black); /* Black for link hover text */
+        }
+        .sticky-sidebar .menu-list a.is-active {
+            background-color: var(--boilermaker-gold); /* Boilermaker Gold for active link background */
+            color: var(--black); /* Black text for active link */
+            font-weight: bold;
+        }
+
+        /* Responsive adjustments for mobile */
+        @media screen and (max-width: 768px) {
+            .sticky-sidebar {
+                position: relative; /* Remove sticky on mobile */
+                top: auto;
+                margin-top: 2rem;
+                max-height: none;
+                overflow-y: visible;
+            }
+            .column.is-one-quarter-desktop {
+                order: 2; /* Put sidebar below main content on mobile */
+            }
+            .column.is-three-quarters-desktop {
+                order: 1; /* Put main content above sidebar on mobile */
+            }
+            .publication-section {
+                padding: 1.5rem 0; /* Less padding on mobile */
+            }
         }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top rounded-bottom">
+    <nav class="navbar is-dark is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="container">
-            <a class="navbar-brand" href="index.html">My Academic Page</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">About Me</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="publications.html">Publications</a>
-                    </li>
-                    <!-- Future navigation items can be added here -->
-                </ul>
+            <div class="navbar-brand">
+                <a class="navbar-item" href="index.html">
+                    <strong>My Academic Page</strong>
+                </a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-end">
+                    <a class="navbar-item" href="index.html">
+                        About Me
+                    </a>
+                    <a class="navbar-item is-active" href="publications.html">
+                        Publications
+                    </a>
+                    <!-- Future links can go here -->
+                </div>
             </div>
         </div>
     </nav>
 
+    <section class="hero is-small">
+        <div class="hero-body">
+            <p class="title has-text-centered">
+                My Publications
+            </p>
+            <p class="subtitle has-text-centered">
+                A comprehensive list of my academic works.
+            </p>
+        </div>
+    </section>
+
     <div class="container mt-4">
-        <div class="row">
-            <!-- Main Content Area -->
-            <div class="col-lg-9 col-md-8">
-                <h1 class="mb-4 text-center">My Publications</h1>
-
-                <section id="working-papers" class="mb-5 py-3">
-                    <h2 class="mb-4 display-6 fs-3 text-primary">Working Papers</h2>
-                    <div class="publication-item">
-                        <p class="mb-1"><span class="publication-title">[Author(s)], "[Title of Working Paper],"</span> <em>[Working Paper Series/Platform, if any]</em>, [Year].</p>
-                        <a href="#" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill">View PDF</a>
-                    </div>
-                    <div class="publication-item">
-                        <p class="mb-1"><span class="publication-title">[Author(s)], "[Another Working Paper Title],"</span> [Year].</p>
-                        <a href="#" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill">View PDF</a>
-                    </div>
-                    <div class="publication-item">
-                        <p class="mb-1"><span class="publication-title">[Author(s)], "[Third Working Paper Title Example],"</span> [Year].</p>
-                        <a href="#" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill">View PDF</a>
-                    </div>
-                </section>
-
-                <section id="selected-publications" class="mb-5 py-3">
-                    <h2 class="mb-4 display-6 fs-3 text-success">Selected Publications</h2>
-                    <div class="publication-item">
-                        <p class="mb-1"><span class="publication-title">[Author(s)], "[Title of Selected Publication],"</span> <em>[Journal Name]</em>, Vol. [Vol], No. [No], pp. [Pages], [Year].</p>
-                        <a href="#" target="_blank" class="btn btn-sm btn-outline-success rounded-pill">View Abstract</a>
-                    </div>
-                    <div class="publication-item">
-                        <p class="mb-1"><span class="publication-title">[Author(s)], "[Another Selected Publication Title],"</span> <em>[Journal Name]</em>, Vol. [Vol], No. [No], pp. [Pages], [Year].</p>
-                        <a href="#" target="_blank" class="btn btn-sm btn-outline-success rounded-pill">View Abstract</a>
-                    </div>
-                </section>
-
-                <section id="other-publications" class="mb-5 py-3">
-                    <h2 class="mb-4 display-6 fs-3 text-info">Other Publications</h2>
-                    <div class="publication-item">
-                        <p class="mb-1"><span class="publication-title">[Author(s)], "[Title of Other Publication],"</span> <em>[Journal/Source]</em>, [Year].</p>
-                        <a href="#" target="_blank" class="btn btn-sm btn-outline-info rounded-pill">View Details</a>
+        <div class="columns">
+            <!-- Main Content Area for Publications -->
+            <div class="column is-three-quarters-desktop is-full-mobile">
+                <section id="working-papers" class="publication-section">
+                    <h2 class="title is-3">Working Papers</h2>
+                    <div class="content">
+                        <div class="publication-item">
+                            <p class="publication-title">F. Nematkhah, Y. Chen and A. L. Liu. Navigating the Bitcoin Boom: Assessing the Impact of Bitcoin Mining Datacenters on Power Generation Expansion.</p>
+                            <p class="publication-details"><em>[Working Paper Series/Platform, if any]</em>.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View PDF</a>
+                        </div>
+                        <div class="publication-item">
+                            <p class="publication-title">F. Chen and A. L. Liu. Networked Multiagent Reinforcement Learning for Peer-to-Peer Energy Trading.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View PDF</a>
+                        </div>
+                        <div class="publication-item">
+                            <p class="publication-title">F. Chen and A. L. Liu. Decentralized Integration of Grid Edge Resources into Wholesale Energy Markets via Mean-field Games.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View PDF</a>
+                        </div>
+                        <div class="publication-item">
+                            <p class="publication-title">V. R. Bosquezfoti and A. L. Liu. A Distributed Optimization Approach to the Multi-Regional Day-Ahead Clearing Process in Electricity Markets.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View PDF</a>
+                        </div>
+                        <div class="publication-item">
+                            <p class="publication-title">R. Chen and A. L. Liu. A Distributed Algorithm for Multi-stage Multi-scale Stochastic Programs with Application to Electricity Capacity Expansion.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View PDF</a>
+                        </div>
+                        <div class="publication-item">
+                            <p class="publication-title">R. Chen and A. L. Liu. A Distributed Algorithm for N-block Non-linearly Constrained Convex Optimization Problems and Its Asynchronous Variant.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View PDF</a>
+                        </div>
+                        <div class="publication-item">
+                            <p class="publication-title">Z. Zhao and A. L. Liu. Decentralized Demand Response Integration with Wholesale Electricity Markets via Multi-agent Bandit Games.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View PDF</a>
+                        </div>
                     </div>
                 </section>
 
-                <section id="conference-proceedings" class="mb-5 py-3">
-                    <h2 class="mb-4 display-6 fs-3 text-warning">Conference Proceedings</h2>
-                    <div class="publication-item">
-                        <p class="mb-1"><span class="publication-title">[Author(s)], "[Title of Conference Paper],"</span> <em>Proceedings of [Conference Name]</em>, [Location], [Date/Year], pp. [Pages].</p>
-                        <a href="#" target="_blank" class="btn btn-sm btn-outline-warning rounded-pill">View Paper</a>
-                    </div>
-                    <div class="publication-item">
-                        <p class="mb-1"><span class="publication-title">[Author(s)], "[Another Conference Paper Title],"</span> <em>Proceedings of [Conference Name]</em>, [Location], [Date/Year], pp. [Pages].</p>
-                        <a href="#" target="_blank" class="btn btn-sm btn-outline-warning rounded-pill">View Paper</a>
+                <section id="selected-publications" class="publication-section">
+                    <h2 class="title is-3">Selected Publications</h2>
+                    <div class="content">
+                        <div class="publication-item">
+                            <p class="publication-title">J. H. Kim, J. S. Giraldo, P. V. Preckel, A. L. Liu, D. Gotham. Welfare Impact of Virtual Trading on Wholesale Electricity Markets.</p>
+                            <p class="publication-details">Accepted to <em>The Energy Journal</em>, 2024.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View Abstract</a>
+                        </div>
+                        <div class="publication-item">
+                            <p class="publication-title">Y. Chen, A. L. Liu, M. Tanaka, R. Takashima. Optimal Retail Tariff Design with Prosumers: Pursuing Energy Equity at the Expenses of Economic Efficiencies?</p>
+                            <p class="publication-details"><em>IEEE Transactions on Energy Markets, Policy and Regulation</em>, Vol. 1, No. 3, pp 198 -- 210, 2023.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View Abstract</a>
+                        </div>
+                        <div class="publication-item">
+                            <p class="publication-title">S. Ramyar, M. Tanaka, A. L. Liu and Y. Chen. Endogenous risk management of prosumers by distributionally robust chance-constrained optimization.</p>
+                            <p class="publication-details"><em>IEEE Transactions on Energy Markets, Policy and Regulation</em>, 2023.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View Abstract</a>
+                        </div>
+                        <div class="publication-item">
+                            <p class="publication-title">Z. Zhao, F. Chen and A. L. Liu. Comparisons of auction designs through multiagent learning in peer-to-peer energy trading.</p>
+                            <p class="publication-details"><em>IEEE Transactions on Smart Grid</em>, Vol. 14, No. 1, pp 593 – 605, 2023.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View Abstract</a>
+                        </div>
+                        <div class="publication-item">
+                            <p class="publication-title">Z. Huang, Q Zheng and A. L. Liu. A nested cross decomposition algorithm for power system capacity expansion with multiscale uncertainties.</p>
+                            <p class="publication-details"><em>INFORMS Journal on Computing</em>. Vol. 34, No. 4, pp 1919 – 1939, 2022.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View Abstract</a>
+                        </div>
+                        <div class="publication-item">
+                            <p class="publication-title">J. Opgrand, P. V. Preckel, D. J. Gotham, and A. L. Liu. Price formation in auctions for financial transmission rights.</p>
+                            <p class="publication-details"><em>Energy Journal</em>. Vol. 43, No. 3, pp 33 – 57, 2022.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View Abstract</a>
+                        </div>
+                        <div class="publication-item">
+                            <p class="publication-title">R. Chen and A. L. Liu. A distributed algorithm for high-dimension convex quadratically constrained quadratic programs.</p>
+                            <p class="publication-details"><em>Computational Optimization and Applications</em>. Vol. 80, pp 781 – 830, 2021.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View Abstract</a>
+                        </div>
+                        <div class="publication-item">
+                            <p class="publication-title">H. Sreekumaran, A. R. Hotay, A. L. Liu, N. A. Uhan and S. Sundaram. Equilibrium strategies for multiple interdictors on a common network.</p>
+                            <p class="publication-details"><em>European Journal of Operations Research</em>. Vol. 288, No. 2, pp 523 – 538, 2021.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View Abstract</a>
+                        </div>
+                        <div class="publication-item">
+                            <p class="publication-title">S. Ramyar, A. L. Liu and Y. Chen. A power market model in presence of strategic prosumers.</p>
+                            <p class="publication-details"><em>IEEE Transactions on Power Systems</em>, Online first, 2019.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View Abstract</a>
+                        </div>
+                        <div class="publication-item">
+                            <p class="publication-title">A. L. Liu and Y. Chen. Price containment in emissions permit markets: Balancing market risk and environmental outcomes.</p>
+                            <p class="publication-details"><em>IISE Transactions</em>, Vol. 49, No. 12, pp 1129-1149, 2017.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View Abstract</a>
+                        </div>
+                        <div class="publication-item">
+                            <p class="publication-title">L. Lu, P. V. Preckel, D. Gotham, and A. L. Liu. An assessment of alternative carbon mitigation policies for achieving the emissions reduction of the Clean Power Plan: Case study for the state of Indiana.</p>
+                            <p class="publication-details"><em>Energy Policy</em>, Vol. 96, pp 661-672, 2016.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View Abstract</a>
+                        </div>
+                        <div class="publication-item">
+                            <p class="publication-title">V. Krishnan, J. Ho, B. H. Hobbs, A. L. Liu, J. D. McCalley, M. Shahidehpour, and Q. P. Zheng. Co-optimization of electricity transmission and generation resources for planning and policy analysis: Review of concepts and modeling approaches.</p>
+                            <p class="publication-details"><em>Energy Systems</em>, Vol. 7, No. 2, pp 297-332, 2016.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View Abstract</a>
+                        </div>
+                        <div class="publication-item">
+                            <p class="publication-title">Q. P. Zheng, J. Wang, and A. L. Liu. Stochastic optimization for unit commitment -- A review.</p>
+                            <p class="publication-details"><em>IEEE Transactions on Power System</em>, Vol. 30, No. 4, pp 1913-1924, 2014.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View Abstract</a>
+                        </div>
+                        <div class="publication-item">
+                            <p class="publication-title">A. L. Liu and B. F. Hobbs. Tacit collusion games in pool-based electricity markets under transmission constraints.</p>
+                            <p class="publication-details"><em>Mathematical Programming, Series B</em>, Vol. 140, No. 2, pp 351-379, 2013.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View Abstract</a>
+                        </div>
+                        <div class="publication-item">
+                            <p class="publication-title">Y. Chen and A. L. Liu. Emissions trading, point-of-regulation and facility siting choices in the electric markets.</p>
+                            <p class="publication-details"><em>Journal of Regulatory Economics</em>, online first, 2013.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View Abstract</a>
+                        </div>
+                        <div class="publication-item">
+                            <p class="publication-title">C. D. Davis, D. J. Gotham, P. V. Preckel and A. L. Liu. Determining the impact of wind on system costs via the temporal patterns of load and wind generation.</p>
+                            <p class="publication-details"><em>Energy Policy</em>, Vol. 60, pp 122-131, 2013.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View Abstract</a>
+                        </div>
+                        <div class="publication-item">
+                            <p class="publication-title">L. S. Han and A. L. Liu. On Nash-Cournot games with price caps.</p>
+                            <p class="publication-details"><em>Operations Research Letters</em>, Vol. 41, pp 92 - 97, 2013.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View Abstract</a>
+                        </div>
+                        <div class="publication-item">
+                            <p class="publication-title">S. Huang, H. Safiullah, J. Xiao, B. Hodge, R. Hoffman, J. Soller, D. Jones, D. Dininger, W. E. Tyner, A. L. Liu, J. F. Pekny. The effects of electric vehicles in the City of Indianapolis.</p>
+                            <p class="publication-details"><em>Energy Policy</em>, Vol. 49, pp 442-455, 2012.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View Abstract</a>
+                        </div>
+                        <div class="publication-item">
+                            <p class="publication-title">S. Huang, J. Xiao, J. F. Pekny, G. V. Reklaitis, and A. L. Liu. Quantifying system level benefits from distributed solar and energy storage.</p>
+                            <p class="publication-details"><em>Journal of Energy Engineering</em>, Vol. 138, No. 2, pp. 33-42, 2012.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View Abstract</a>
+                        </div>
+                        <div class="publication-item">
+                            <p class="publication-title">Y. Chen, A. L. Liu, B. F. Hobbs. Economic and emissions implications of load-based, source-based, and first-seller emissions trading programs under California AB32.</p>
+                            <p class="publication-details"><em>Operations Research</em>, Vol. 59, No. 3, pp. 696-712, 2011.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View Abstract</a>
+                        </div>
+                        <div class="publication-item">
+                            <p class="publication-title">J. E. Harrington, B. F. Hobbs, J.-S. Pang, A. Liu, G. Roch. Collusive game solutions via optimization.</p>
+                            <p class="publication-details"><em>Mathematical Programming, Series B</em> Vol. 104, pp 407-435, 2005.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View Abstract</a>
+                        </div>
                     </div>
                 </section>
 
-                <section id="book-chapters" class="mb-5 py-3">
-                    <h2 class="mb-4 display-6 fs-3 text-danger">Book Chapters</h2>
-                    <div class="publication-item">
-                        <p class="mb-1"><span class="publication-title">[Author(s)], "[Title of Chapter],"</span> in <em>[Book Title]</em>, Edited by [Editor(s)], [Publisher], [Year], pp. [Pages].</p>
-                        <a href="#" target="_blank" class="btn btn-sm btn-outline-danger rounded-pill">View Chapter</a>
+                <section id="other-publications" class="publication-section">
+                    <h2 class="title is-3">Other Publications</h2>
+                    <div class="content">
+                        <div class="publication-item">
+                            <p class="publication-title">N. Chen, Y. Chen, J.-M. Goldman, A. L. Liu, and C.-H. Wang. Investigating Climate-change-induced Vulnerability of the Northern California Natural Gas Energy System and Identifying Resilience Options.</p>
+                            <p class="publication-details">Final project report to California Energy Commission, 2021.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View Details</a>
+                        </div>
+                        <div class="publication-item">
+                            <p class="publication-title">A. L. Liu, B. H. Hobbs, J. Ho, J. D. McCalley, V. Krishnan, M. Shahidehpour, and Q. P. Zheng. "White Paper: Co-optimization of Transmission and Other Supply Resources".</p>
+                            <p class="publication-details">Prepared for Eastern Interconnection States' Planning Council and National Association of Regulatory Utility Commissioners.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View Details</a>
+                        </div>
+                        <div class="publication-item">
+                            <p class="publication-title">ICF International and A. L. Liu. "Study on long-term electric and natural gas infrastructure requirements in the Eastern Interconnection".</p>
+                            <p class="publication-details">Prepared for Eastern Interconnection States' Planning Council and National Association of Regulatory Utility Commissioners.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View Details</a>
+                        </div>
                     </div>
                 </section>
 
+                <section id="conference-proceedings" class="publication-section">
+                    <h2 class="title is-3">Refereed Conference Proceedings</h2>
+                    <div class="content">
+                        <div class="publication-item">
+                            <p class="publication-title">J. He and A. L. Liu. Evaluating the Impact of Multiple DER Aggregators on Wholesale Energy Markets: A Hybrid Mean Field Approach.</p>
+                            <p class="publication-details">Accepted to CIGRE Grid of the Future Symposium, November 2024.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View Paper</a>
+                        </div>
+                        <div class="publication-item">
+                            <p class="publication-title">F. Chen, A. L. Liu, and Y. Chen. Decentralized Voltage Control with Peer-to-peer Energy Trading in a Distribution Network.</p>
+                            <p class="publication-details">Proceedings of the 56th Hawaii International Conference on System Sciences, 2022.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View Paper</a>
+                        </div>
+                        <div class="publication-item">
+                            <p class="publication-title">Z. Zhao, A.L. Liu, and Y. Chen. Electricity Demand Response under Real-Time Pricing: A Multi-armed Bandit Game.</p>
+                            <p class="publication-details">Conference: 2018 Asia-Pacific Signal and Information Processing Asia Annual Summit and Conference (APSIPA ASC), October 2018. DOI:10.23919/APSIPA.2018.8659687</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View Paper</a>
+                        </div>
+                        <div class="publication-item">
+                            <p class="publication-title">Z. Zhao and A. L. Liu. Intelligent demand response for electricity consumers: A multi-armed bandit game approach.</p>
+                            <p class="publication-details">Proceedings to 2017 International Conference on Intelligent Systems Applications to Power (ISAP), 2017.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View Paper</a>
+                        </div>
+                        <div class="publication-item">
+                            <p class="publication-title">H. Sreekumaran and A. L. Liu. Equilibrium wind hedge contract structure through Nash Bargaining.</p>
+                            <p class="publication-details">Proceedings of the Industrial Engineering Research Conference, 2011.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View Paper</a>
+                        </div>
+                        <div class="publication-item">
+                            <p class="publication-title">J. Xiao, B. S. Hodge, A. L. Liu, J. F. Pekny, and G. V. Reklaitis. Long-term planning of wind farm siting in the electricity grid.</p>
+                            <p class="publication-details">Proceedings of 21st European Symposium on Computer Aided Process Engineering - ESCAPE 21, 2010.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View Paper</a>
+                        </div>
+                        <div class="publication-item">
+                            <p class="publication-title">A. L. Liu. Repeated games in electricity spot and forward markets - An equilibrium modeling and computational framework.</p>
+                            <p class="publication-details">Proceedings of 48th Annual Allerton Conference on Communication, Control, and Computing, 2010.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View Paper</a>
+                        </div>
+                        <div class="publication-item">
+                            <p class="publication-title">T. Brady and A. L. Liu. The analysis of electricity storage location sites in the electric transmission grid.</p>
+                            <p class="publication-details">Proceedings of the Industrial Engineering Research Conference, 2010.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View Paper</a>
+                        </div>
+                        <div class="publication-item">
+                            <p class="publication-title">Y. Chen and A. L. Liu. Effects of allowances allocation schemes on the emissions leakage and contract shuffling.</p>
+                            <p class="publication-details">Proceedings to 32nd IAEE International Conference, online publication, 2009.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View Paper</a>
+                        </div>
+                        <div class="publication-item">
+                            <p class="publication-title">J. E. Harrington, B. F Hobbs, J.-S Pang, A. Liu, and G. Roch. Collusive game solutions via optimization.</p>
+                            <p class="publication-details">Proceedings of the NSF-ONR EPNES II workshop, 2003.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View Paper</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="book-chapters" class="publication-section">
+                    <h2 class="title is-3">Refereed Book Chapters</h2>
+                    <div class="content">
+                        <div class="publication-item">
+                            <p class="publication-title">V. R. Bosquezfoti and A. L. Liu. Power Grid and Electrical Power System Security.</p>
+                            <p class="publication-details"><em>Springer Handbook of Automation (2nd ed.)</em>, editor-in-chief: Shimon Y. Nof, 2022.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View Chapter</a>
+                        </div>
+                        <div class="publication-item">
+                            <p class="publication-title">A. L. Liu, N. A. Uhan and F. Zhao. Scheduling for Energy Efficient Manufacturing.</p>
+                            <p class="publication-details"><em>Energy Efficient Manufacturing with Applications</em>. Editors: J. W. Sutherland and B. S. Linke 2012.</p>
+                            <a href="#" target="_blank" class="button is-small is-outlined is-rounded is-black">View Chapter</a>
+                        </div>
+                    </div>
+                </section>
             </div>
 
             <!-- Table of Contents Sidebar -->
-            <div class="col-lg-3 col-md-4 d-none d-md-block"> <!-- Hidden on small screens, visible on medium and up -->
-                <div class="sticky-sidebar">
-                    <h4 class="mb-3 text-center">Table of Contents</h4>
-                    <nav class="nav flex-column">
-                        <a class="nav-link" href="#working-papers">Working Papers</a>
-                        <a class="nav-link" href="#selected-publications">Selected Publications</a>
-                        <a class="nav-link" href="#other-publications">Other Publications</a>
-                        <a class="nav-link" href="#conference-proceedings">Conference Proceedings</a>
-                        <a class="nav-link" href="#book-chapters">Book Chapters</a>
-                    </nav>
-                </div>
+            <div class="column is-one-quarter-desktop is-full-mobile">
+                <aside class="menu sticky-sidebar">
+                    <p class="menu-label">
+                        Table of Contents
+                    </p>
+                    <ul class="menu-list">
+                        <li><a href="#working-papers">Working Papers</a></li>
+                        <li><a href="#selected-publications">Selected Publications</a></li>
+                        <li><a href="#other-publications">Other Publications</a></li>
+                        <li><a href="#conference-proceedings">Refereed Conference Proceedings</a></li>
+                        <li><a href="#book-chapters">Refereed Book Chapters</a></li>
+                    </ul>
+                </aside>
             </div>
         </div>
     </div>
 
-    <!-- Bootstrap JS CDN (Bundle includes Popper) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Simple script to highlight active section in sidebar
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', () => {
+            // Navbar burger menu toggle
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            if ($navbarBurgers.length > 0) {
+                $navbarBurgers.forEach(el => {
+                    el.addEventListener('click', () => {
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+                        el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                    });
+                });
+            }
+
+            // Sticky sidebar active link highlighting
             const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.sticky-sidebar .nav-link');
+            const navLinks = document.querySelectorAll('.sticky-sidebar .menu-list a');
 
             function activateNavLink() {
                 let current = '';
+                // Get the current scroll position, adjusted for the fixed navbar
+                const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                const stickySidebarTopOffset = parseFloat(getComputedStyle(document.querySelector('.sticky-sidebar')).top);
+                const scrollYAdjusted = window.scrollY + navbarHeight + stickySidebarTopOffset;
+
                 sections.forEach(section => {
-                    const sectionTop = section.offsetTop - 75; // Adjust offset for fixed navbar
-                    if (scrollY >= sectionTop) {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    if (scrollYAdjusted >= sectionTop && scrollYAdjusted < sectionTop + sectionHeight) {
                         current = section.getAttribute('id');
                     }
                 });
 
                 navLinks.forEach(link => {
-                    link.classList.remove('active');
+                    link.classList.remove('is-active');
                     if (link.href.includes(current)) {
-                        link.classList.add('active');
+                        link.classList.add('is-active');
                     }
                 });
             }
