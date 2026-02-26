@@ -1,0 +1,51 @@
+/* Purdue Theme Colors & Typography */
+:root {
+    --purdue-black: #000000;
+    --purdue-gold: #CEB888;
+    --light-gray: #f4f4f4;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+    background-color: var(--light-gray);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navigation */
+.navbar { background-color: var(--purdue-black); padding: 1rem 0; }
+.navbar-brand { color: #fff !important; font-weight: bold; letter-spacing: 1px; }
+.nav-link { color: #fff !important; text-transform: uppercase; font-size: 0.9rem; font-weight: 500; margin: 0 10px; transition: color 0.3s; }
+.nav-link:hover, .nav-link.active { color: var(--purdue-gold) !important; }
+
+/* Section Titles */
+.section-title { text-transform: uppercase; font-weight: bold; font-size: 2rem; margin-bottom: 40px; text-align: center; position: relative; }
+.section-title::after { content: ""; display: block; width: 60px; height: 3px; background-color: var(--purdue-gold); margin: 15px auto 0; }
+
+/* Home / Hero Section */
+.hero-section { padding: 60px 0; text-align: center; }
+.hero-section h1 { font-weight: bold; margin-bottom: 20px; }
+.video-placeholder { background-color: #ddd; height: 400px; max-width: 800px; margin: 0 auto; display: flex; align-items: center; justify-content: center; color: #666; border-radius: 8px; }
+
+/* Social Bar */
+.social-bar { background-color: var(--purdue-black); padding: 15px 0; text-align: center; }
+.social-bar a { color: #fff; margin: 0 15px; text-decoration: none; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.5px; transition: color 0.3s; }
+.social-bar a:hover { color: var(--purdue-gold); }
+
+/* News Cards */
+.news-card { border: none; background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease; height: 100%; }
+.news-card:hover { transform: translateY(-5px); }
+.news-date { color: var(--purdue-gold); font-weight: bold; font-size: 0.9rem; margin-bottom: 10px; display: block; }
+.news-card .card-title { font-size: 1.1rem; font-weight: bold; line-height: 1.4; }
+.card-img-top { height: 200px; object-fit: cover; background-color: #eee; }
+
+/* About Section */
+.about-section { padding: 60px 0; flex-grow: 1; }
+.list-heading { color: var(--purdue-black); border-bottom: 2px solid var(--purdue-gold); padding-bottom: 5px; margin-bottom: 20px; font-weight: bold; }
+
+/* Footer */
+footer { background-color: var(--purdue-black); color: #fff; padding: 40px 0 20px 0; text-align: center; margin-top: auto; }
+footer p { margin: 0; font-size: 0.9rem; color: #ccc; }
+.footer-contact { margin-bottom: 20px; }
+.footer-contact h5 { color: var(--purdue-gold); font-weight: bold; }
