@@ -8,7 +8,17 @@
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.html#news">News</a></li>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="newsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        News & Events
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark rounded-0 border-0 m-0" aria-labelledby="newsDropdown" style="background-color: var(--purdue-black);">
+                        <li><a class="dropdown-item text-light hover-gold" href="news.html">News Archive</a></li>
+                        <li><a class="dropdown-item text-light hover-gold" href="events.html">Upcoming Events</a></li>
+                    </ul>
+                </li>
+                
                 <li class="nav-item"><a class="nav-link" href="research.html">Research</a></li>
                 <li class="nav-item"><a class="nav-link" href="people.html">People</a></li>
                 <li class="nav-item"><a class="nav-link" href="publications.html">Publications</a></li>
@@ -17,3 +27,7 @@
         </div>
     </div>
 </nav>
+
+<style>
+    .hover-gold:hover { background-color: transparent; color: var(--purdue-gold) !important; }
+</style>
