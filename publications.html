@@ -1,110 +1,659 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Publications | Intel2Grid Lab</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <div id="navbar-placeholder"></div>
 
     <section class="publications-section py-5 flex-grow-1">
-        <div class="container">
-            <h2 class="section-title">Publications</h2>
-            
-            <div class="row mt-5">
-                
-                <div class="col-lg-3 mb-4">
-                    <div class="sticky-top shadow-sm rounded overflow-hidden" style="top: 100px;">
-                        <div class="list-group list-group-flush border-0">
-                            <a href="#working" class="list-group-item list-group-item-action fw-bold bg-light"><i class="bi bi-caret-right-fill text-warning me-2"></i>Working Papers</a>
-                            <a href="#selected" class="list-group-item list-group-item-action fw-bold bg-light"><i class="bi bi-caret-right-fill text-warning me-2"></i>Selected Publications</a>
-                            <a href="#proceedings" class="list-group-item list-group-item-action fw-bold bg-light"><i class="bi bi-caret-right-fill text-warning me-2"></i>Conference Proceedings</a>
-                            <a href="#books" class="list-group-item list-group-item-action fw-bold bg-light"><i class="bi bi-caret-right-fill text-warning me-2"></i>Book Chapters</a>
-                            <a href="#other" class="list-group-item list-group-item-action fw-bold bg-light"><i class="bi bi-caret-right-fill text-warning me-2"></i>Other Publications</a>
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <h2 class="section-title">Publications</h2>
 
-                <div class="col-lg-9">
-                    <div class="bg-white p-4 shadow-sm rounded">
-                        
-                        <h4 id="working" class="list-heading mt-2">Working Papers</h4>
-                        <ul class="list-unstyled mb-5" style="line-height: 1.8;">
-                            <li class="mb-3">F. Nematkhah, Y. Chen and A. L. Liu. <strong>Navigating the Bitcoin Boom: Assessing the Impact of Bitcoin Mining Datacenters on Power Generation Expansion.</strong></li>
-                            <li class="mb-3">F. Chen and A. L. Liu. <strong>Networked Multiagent Reinforcement Learning for Peer-to-Peer Energy Trading.</strong> <a href="https://arxiv.org/abs/2401.13947" class="badge bg-danger text-decoration-none ms-1" target="_blank"><i class="bi bi-box-arrow-up-right"></i> Link</a></li>
-                            <li class="mb-3">F. Chen and A. L. Liu. <strong>Decentralized Integration of Grid Edge Resources into Wholesale Energy Markets via Mean-field Games.</strong></li>
-                            <li class="mb-3">V. R. Bosquezfoti and A. L. Liu. <strong>A Distributed Optimization Approach to the Multi-Regional Day-Ahead Clearing Process in Electricity Markets.</strong> <a href="https://arxiv.org/abs/2012.13852" class="badge bg-danger text-decoration-none ms-1" target="_blank"><i class="bi bi-box-arrow-up-right"></i> Link</a></li>
-                            <li class="mb-3">R. Chen and A. L. Liu. <strong>A Distributed Algorithm for Multi-stage Multi-scale Stochastic Programs with Application to Electricity Capacity Expansion.</strong></li>
-                            <li class="mb-3">R. Chen and A. L. Liu. <strong>A Distributed Algorithm for N-block Non-linearly Constrained Convex Optimization Problems and Its Asynchronous Variant.</strong></li>
-                            <li class="mb-3">Z. Zhao and A. L. Liu. <strong>Decentralized Demand Response Integration with Wholesale Electricity Markets via Multi-agent Bandit Games.</strong></li>
-                        </ul>
-
-                        <h4 id="selected" class="list-heading">Selected Publications</h4>
-                        <ul class="list-unstyled mb-5" style="line-height: 1.8;">
-                            <li class="mb-3">J. H. Kim, J. S. Giraldo, P. V. Preckel, A. L. Liu, D. Gotham. <strong>Welfare Impact of Virtual Trading on Wholesale Electricity Markets.</strong> Accepted to <em>The Energy Journal</em>, 2024.</li>
-                            <li class="mb-3">Y. Chen, A. L. Liu, M. Tanaka, R. Takashima. <strong>Optimal Retail Tariff Design with Prosumers: Pursuing Energy Equity at the Expenses of Economic Efficiencies?</strong> <em>IEEE Transactions on Energy Markets, Policy and Regulation</em>, Vol. 1, No. 3, pp 198 -- 210, 2023. <a href="https://ieeexplore.ieee.org/document/10177234" class="badge bg-danger text-decoration-none ms-1" target="_blank"><i class="bi bi-box-arrow-up-right"></i> Link</a></li>
-                            <li class="mb-3">S. Ramyar, M. Tanaka, A. L. Liu and Y. Chen. <strong>Endogenous risk management of prosumers by distributionally robust chance-constrained optimization.</strong> <em>IEEE Transactions on Energy Markets, Policy and Regulation</em>, 2023. <a href="https://ieeexplore.ieee.org/document/10038580" class="badge bg-danger text-decoration-none ms-1" target="_blank"><i class="bi bi-box-arrow-up-right"></i> Link</a></li>
-                            <li class="mb-3">Z. Zhao, F. Chen and A. L. Liu. <strong>Comparisons of auction designs through multiagent learning in peer-to-peer energy trading.</strong> <em>IEEE Transactions on Smart Grid</em>, Vol. 14, No. 1, pp 593 &ndash; 605, 2023. <a href="https://ieeexplore.ieee.org/document/9828543" class="badge bg-danger text-decoration-none ms-1" target="_blank"><i class="bi bi-box-arrow-up-right"></i> Link</a></li>
-                            <li class="mb-3">Z. Huang, Q Zheng and A. L. Liu. <strong>A nested cross decomposition algorithm for power system capacity expansion with multiscale uncertainties.</strong> <em>INFORMS Journal on Computing</em>. Vol. 34, No. 4, pp 1919 &ndash; 1939, 2022. <a href="https://pubsonline.informs.org/doi/pdf/10.1287/ijoc.2022.1177" class="badge bg-danger text-decoration-none ms-1" target="_blank"><i class="bi bi-box-arrow-up-right"></i> Link</a></li>
-                            <li class="mb-3">J. Opgrand, P. V. Preckel, D. J. Gotham, and A. L. Liu. <strong>Price formation in auctions for financial transmission rights.</strong> <em>Energy Journal</em>. Vol. 43, No. 3, pp 33 &ndash; 57, 2022. <a href="https://www.iaee.org/en/publications/ejarticle.aspx?id=3826" class="badge bg-danger text-decoration-none ms-1" target="_blank"><i class="bi bi-box-arrow-up-right"></i> Link</a></li>
-                            <li class="mb-3">R. Chen and A. L. Liu. <strong>A distributed algorithm for high-dimension convex quadratically constrained quadratic programs.</strong> <em>Computational Optimization and Applications</em>. Vol. 80, pp 781 &ndash; 830, 2021. <a href="https://link.springer.com/article/10.1007/s10589-021-00319-x" class="badge bg-danger text-decoration-none ms-1" target="_blank"><i class="bi bi-box-arrow-up-right"></i> Link</a></li>
-                            <li class="mb-3">H. Sreekumaran, A. R. Hotay, A. L. Liu, N. A. Uhan and S. Sundaram. <strong>Equilibrium strategies for multiple interdictors on a common network.</strong> <em>European Journal of Operations Research</em>. Vol. 288, No. 2, pp 523 &ndash; 538, 2021. <a href="https://www.sciencedirect.com/science/article/pii/S0377221720305415" class="badge bg-danger text-decoration-none ms-1" target="_blank"><i class="bi bi-box-arrow-up-right"></i> Link</a></li>
-                            <li class="mb-3">S. Ramyar, A. L. Liu and Y. Chen. <strong>A power market model in presence of strategic prosumers.</strong> <em>IEEE Transactions on Power Systems</em>, Online first, 2019. <a href="https://ieeexplore.ieee.org/document/8815858" class="badge bg-danger text-decoration-none ms-1" target="_blank"><i class="bi bi-box-arrow-up-right"></i> Link</a></li>
-                            <li class="mb-3">A. L. Liu and Y. Chen. <strong>Price containment in emissions permit markets: Balancing market risk and environmental outcomes.</strong> <em>IISE Transactions</em>, Vol. 49, No. 12, pp 1129-1149, 2017. <a href="http://www.tandfonline.com/doi/full/10.1080/24725854.2017.1362506" class="badge bg-danger text-decoration-none ms-1" target="_blank"><i class="bi bi-box-arrow-up-right"></i> Link</a></li>
-                            <li class="mb-3">L. Lu, P. V. Preckel, D. Gotham, and A. L. Liu. <strong>An assessment of alternative carbon mitigation policies for achieving the emissions reduction of the Clean Power Plan: Case study for the state of Indiana.</strong> <em>Energy Policy</em>, Vol. 96, pp 661-672, 2016. <a href="http://www.sciencedirect.com/science/article/pii/S0301421516303500" class="badge bg-danger text-decoration-none ms-1" target="_blank"><i class="bi bi-box-arrow-up-right"></i> Link</a></li>
-                            <li class="mb-3">V. Krishnan, J. Ho, B. H. Hobbs, A. L. Liu, J. D. McCalley, M. Shahidehpour, and Q. P. Zheng. <strong>Co-optimization of electricity transmission and generation resources for planning and policy analysis: Review of concepts and modeling approaches.</strong> <em>Energy Systems</em>, Vol. 7, No. 2, pp 297-332, 2016. <a href="https://www.researchgate.net/publication/281123009_Co-optimization_of_electricity_transmission_and_generation_resources_for_planning_and_policy_analysis_review_of_concepts_and_modeling_approaches" class="badge bg-danger text-decoration-none ms-1" target="_blank"><i class="bi bi-box-arrow-up-right"></i> Link</a></li>
-                            <li class="mb-3">Q. P. Zheng, J. Wang, and A. L. Liu. <strong>Stochastic optimization for unit commitment -- A review.</strong> <em>IEEE Transactions on Power System</em>, Vol. 30, No. 4, pp 1913-1924, 2014. <a href="http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6912028" class="badge bg-danger text-decoration-none ms-1" target="_blank"><i class="bi bi-box-arrow-up-right"></i> Link</a></li>
-                            <li class="mb-3">A. L. Liu and B. F. Hobbs. <strong>Tacit collusion games in pool-based electricity markets under transmission constraints.</strong> <em>Mathematical Programming</em>, Series B, Vol. 140, No. 2, pp 351-379, 2013. <a href="https://link.springer.com/article/10.1007/s10107-013-0693-5" class="badge bg-danger text-decoration-none ms-1" target="_blank"><i class="bi bi-box-arrow-up-right"></i> Link</a></li>
-                            <li class="mb-3">Y. Chen and A. L. Liu. <strong>Emissions trading, point-of-regulation and facility siting choices in the electric markets.</strong> <em>Journal of Regulatory Economics</em>, online first, 2013. <a href="https://link.springer.com/article/10.1007/s11149-013-9224-9" class="badge bg-danger text-decoration-none ms-1" target="_blank"><i class="bi bi-box-arrow-up-right"></i> Link</a></li>
-                            <li class="mb-3">C. D. Davis, D. J. Gotham, P. V. Preckel and A. L. Liu. <strong>Determining the impact of wind on system costs via the temporal patterns of load and wind generation.</strong> <em>Energy Policy</em>, Vol. 60, pp 122-131, 2013. <a href="https://www.sciencedirect.com/science/article/pii/S0301421513003169" class="badge bg-danger text-decoration-none ms-1" target="_blank"><i class="bi bi-box-arrow-up-right"></i> Link</a></li>
-                            <li class="mb-3">L. S. Han and A. L. Liu. <strong>On Nash-Cournot games with price caps.</strong> <em>Operations Research Letters</em>, Vol. 41, pp 92 - 97, 2013. <a href="https://www.sciencedirect.com/science/article/pii/S0167637712001423" class="badge bg-danger text-decoration-none ms-1" target="_blank"><i class="bi bi-box-arrow-up-right"></i> Link</a></li>
-                            <li class="mb-3">S. Huang, H. Safiullah, J. Xiao, B. Hodge, R. Hoffman, J. Soller, D. Jones, D. Dininger, W. E. Tyner, A. L. Liu, J. F. Pekny. <strong>The effects of electric vehicles in the City of Indianapolis.</strong> <em>Energy Policy</em>, Vol. 49, pp 442-455, 2012. <a href="https://www.sciencedirect.com/science/article/pii/S0301421512005496" class="badge bg-danger text-decoration-none ms-1" target="_blank"><i class="bi bi-box-arrow-up-right"></i> Link</a></li>
-                            <li class="mb-3">S. Huang, J. Xiao, J. F. Pekny, G. V. Reklaitis, and A. L. Liu. <strong>Quantifying system level benefits from distributed solar and energy storage.</strong> <em>Journal of Energy Engineering</em>, Vol. 138, No. 2, pp. 33-42, 2012. <a href="https://ascelibrary.org/doi/10.1061/%28ASCE%29EY.1943-7897.0000064" class="badge bg-danger text-decoration-none ms-1" target="_blank"><i class="bi bi-box-arrow-up-right"></i> Link</a></li>
-                            <li class="mb-3">Y. Chen, A. L. Liu, B. F. Hobbs. <strong>Economic and emissions implications of load-based, source-based, and first-seller emissions trading programs under California AB32.</strong> <em>Operations Research</em>, Vol. 59, No. 3, pp. 696-712, 2011. <a href="https://pubsonline.informs.org/doi/10.1287/opre.1110.0917" class="badge bg-danger text-decoration-none ms-1" target="_blank"><i class="bi bi-box-arrow-up-right"></i> Link</a></li>
-                            <li class="mb-3">J. E. Harrington, B. F. Hobbs, J.-S. Pang, A. Liu, G. Roch. <strong>Collusive game solutions via optimization.</strong> <em>Mathematical Programming</em>, Series B Vol. 104, pp 407-435, 2005. <a href="https://link.springer.com/article/10.1007/s10107-005-0622-3" class="badge bg-danger text-decoration-none ms-1" target="_blank"><i class="bi bi-box-arrow-up-right"></i> Link</a></li>
-                        </ul>
-
-                        <h4 id="proceedings" class="list-heading">Refereed Conference Proceedings</h4>
-                        <ul class="list-unstyled mb-5" style="line-height: 1.8;">
-                            <li class="mb-3">J. He and A. L. Liu. <strong>Evaluating the Impact of Multiple DER Aggregators on Wholesale Energy Markets: A Hybrid Mean Field Approach.</strong> Accepted to <em>CIGRE Grid of the Future Symposium</em>, November 2024. <a href="https://arxiv.org/abs/2409.00107" class="badge bg-danger text-decoration-none ms-1" target="_blank"><i class="bi bi-box-arrow-up-right"></i> Link</a></li>
-                            <li class="mb-3">F. Chen, A. L. Liu, and Y. Chen. <strong>Decentralized Voltage Control with Peer-to-peer Energy Trading in a Distribution Network.</strong> Proceedings of the <em>56th Hawaii International Conference on System Sciences</em>, 2022. <a href="https://scholarspace.manoa.hawaii.edu/server/api/core/bitstreams/a2ed1c31-3975-4a2c-bb5d-73421eb66337/content" class="badge bg-danger text-decoration-none ms-1" target="_blank"><i class="bi bi-box-arrow-up-right"></i> Link</a></li>
-                            <li class="mb-3">Z. Zhao, A.L. Liu, and Y. Chen. <strong>Electricity Demand Response under Real-Time Pricing: A Multi-armed Bandit Game.</strong> Conference: 2018 Asia-Pacific Signal and Information Processing Association Annual Summit and Conference (APSIPA ASC), October 2018. <a href="https://www.researchgate.net/publication/331846720_Electricity_Demand_Response_under_Real-Time_Pricing_A_Multi-armed_Bandit_Game" class="badge bg-danger text-decoration-none ms-1" target="_blank"><i class="bi bi-box-arrow-up-right"></i> Link</a></li>
-                            <li class="mb-3">Z. Zhao and A. L. Liu. <strong>Intelligent demand response for electricity consumers: A multi-armed bandit game approach.</strong> Proceedings to <em>2017 International Conference on Intelligent Systems Applications to Power (ISAP)</em>, 2017. <a href="https://www.researchgate.net/publication/320650173_Intelligent_demand_response_for_electricity_consumers_A_multi-armed_bandit_game_approach" class="badge bg-danger text-decoration-none ms-1" target="_blank"><i class="bi bi-box-arrow-up-right"></i> Link</a></li>
-                            <li class="mb-3">H. Sreekumaran and A. L. Liu. <strong>Equilibrium wind hedge contract structure through Nash Bargaining.</strong> Proceedings of the Industrial Engineering Research Conference, 2011. <a href="https://docs.lib.purdue.edu/dissertations/AAI1510306/" class="badge bg-danger text-decoration-none ms-1" target="_blank"><i class="bi bi-box-arrow-up-right"></i> Link</a></li>
-                            <li class="mb-3">J. Xiao, B. S. Hodge, A. L. Liu, J. F. Pekny, and G. V. Reklaitis. <strong>Long-term planning of wind farm siting in the electricity grid.</strong> Proceedings of 21st European Symposium on Computer Aided Process Engineering - ESCAPE 21, 2010.</li>
-                            <li class="mb-3">A. L. Liu. <strong>Repeated games in electricity spot and forward markets - An equilibrium modeling and computational framework.</strong> Proceedings of 48th Annual Allerton Conference on Communication, Control, and Computing, 2010.</li>
-                            <li class="mb-3">T. Brady and A. L. Liu. <strong>The analysis of electricity storage location sites in the electric transmission grid.</strong> Proceedings of the Industrial Engineering Research Conference, 2010.</li>
-                            <li class="mb-3">Y. Chen and A. L. Liu. <strong>Effects of allowances allocation schemes on the emissions leakage and contract shuffling.</strong> Proceedings to 32nd IAEE International Conference, online publication, 2009.</li>
-                            <li class="mb-3">J. E. Harrington, B. F Hobbs, J.-S Pang, A. Liu, and G. Roch. <strong>Collusive game solutions via optimization.</strong> Proceedings of the NSF-ONR EPNES II workshop, 2003.</li>
-                        </ul>
-
-                        <h4 id="books" class="list-heading">Refereed Book Chapters</h4>
-                        <ul class="list-unstyled mb-5" style="line-height: 1.8;">
-                            <li class="mb-3">V. R. Bosquezfoti and A. L. Liu. <strong>Power Grid and Electrical Power System Security.</strong> <em>Springer Handbook of Automation (2nd ed.)</em>, editor-in-chief: Shimon Y. Nof, 2022.</li>
-                            <li class="mb-3">A. L. Liu, N. A. Uhan and F. Zhao. <strong>Scheduling for Energy Efficient Manufacturing.</strong> <em>Energy Efficient Manufacturing with Applications.</em> Editors: J. W. Sutherland and B. S. Linke, 2012.</li>
-                        </ul>
-
-                        <h4 id="other" class="list-heading">Other Publications</h4>
-                        <ul class="list-unstyled mb-0" style="line-height: 1.8;">
-                            <li class="mb-3">N. Chen, Y. Chen, J.-M. Goldman, A. L. Liu, and C.-H. Wang. <strong>Investigating Climate-change-induced Vulnerability of the Northern California Natural Gas Energy System and Identifying Resilience Options.</strong> Final project report to California Energy Commission, 2021. <a href="https://www.energy.ca.gov/publications/2021/increasing-resiliency-northern-california-natural-gas-system-reduce" class="badge bg-danger text-decoration-none ms-1" target="_blank"><i class="bi bi-box-arrow-up-right"></i> Link</a></li>
-                            <li class="mb-3">A. L. Liu, B. H. Hobbs, J. Ho, J. D. McCalley, V. Krishnan, M. Shahidehpour, and Q. P. Zheng. <strong>"White Paper: Co-optimization of Transmission and Other Supply Resources".</strong> Prepared for Eastern Interconnection States' Planning Council and National Association of Regulatory Utility Commissioners. <a href="http://pubs.naruc.org/pub/536D834A-2354-D714-51D6-AE55F431E2AA" class="badge bg-danger text-decoration-none ms-1" target="_blank"><i class="bi bi-box-arrow-up-right"></i> Link</a></li>
-                            <li class="mb-3">ICF International and A. L. Liu. <strong>"Study on long-term electric and natural gas infrastructure requirements in the Eastern Interconnection".</strong> Prepared for Eastern Interconnection States' Planning Council and National Association of Regulatory Utility Commissioners. <a href="http://pubs.naruc.org/pub.cfm?id=536DFAF7-2354-D714-512C-1BA1BBD00009" class="badge bg-danger text-decoration-none ms-1" target="_blank"><i class="bi bi-box-arrow-up-right"></i> Link</a></li>
-                        </ul>
-
-                    </div>
-                </div>
+        <div class="row mt-5">
+          <div class="col-lg-3 mb-4">
+            <div
+              class="sticky-top shadow-sm rounded overflow-hidden"
+              style="top: 100px"
+            >
+              <div class="list-group list-group-flush border-0">
+                <a
+                  href="#working"
+                  class="list-group-item list-group-item-action fw-bold bg-light"
+                  ><i class="bi bi-caret-right-fill text-warning me-2"></i
+                  >Working Papers</a
+                >
+                <a
+                  href="#selected"
+                  class="list-group-item list-group-item-action fw-bold bg-light"
+                  ><i class="bi bi-caret-right-fill text-warning me-2"></i
+                  >Selected Publications</a
+                >
+                <a
+                  href="#proceedings"
+                  class="list-group-item list-group-item-action fw-bold bg-light"
+                  ><i class="bi bi-caret-right-fill text-warning me-2"></i
+                  >Conference Proceedings</a
+                >
+                <a
+                  href="#books"
+                  class="list-group-item list-group-item-action fw-bold bg-light"
+                  ><i class="bi bi-caret-right-fill text-warning me-2"></i>Book
+                  Chapters</a
+                >
+                <a
+                  href="#other"
+                  class="list-group-item list-group-item-action fw-bold bg-light"
+                  ><i class="bi bi-caret-right-fill text-warning me-2"></i>Other
+                  Publications</a
+                >
+              </div>
             </div>
+          </div>
+
+          <div class="col-lg-9">
+            <div class="bg-white p-4 shadow-sm rounded">
+              <h4 id="working" class="list-heading mt-2">Working Papers</h4>
+              <ul class="list-unstyled mb-5" style="line-height: 1.8">
+                <li class="mb-3">
+                  F. Nematkhah, Y. Chen and A. L. Liu.
+                  <strong
+                    >Navigating the Bitcoin Boom: Assessing the Impact of
+                    Bitcoin Mining Datacenters on Power Generation
+                    Expansion.</strong
+                  >
+                </li>
+                <li class="mb-3">
+                  F. Chen and A. L. Liu.
+                  <strong
+                    >Networked Multiagent Reinforcement Learning for
+                    Peer-to-Peer Energy Trading.</strong
+                  >
+                  <a
+                    href="https://arxiv.org/abs/2401.13947"
+                    class="badge bg-danger text-decoration-none ms-1"
+                    target="_blank"
+                    ><i class="bi bi-box-arrow-up-right"></i> Link</a
+                  >
+                </li>
+                <li class="mb-3">
+                  F. Chen and A. L. Liu.
+                  <strong
+                    >Decentralized Integration of Grid Edge Resources into
+                    Wholesale Energy Markets via Mean-field Games.</strong
+                  >
+                </li>
+                <li class="mb-3">
+                  V. R. Bosquezfoti and A. L. Liu.
+                  <strong
+                    >A Distributed Optimization Approach to the Multi-Regional
+                    Day-Ahead Clearing Process in Electricity Markets.</strong
+                  >
+                  <a
+                    href="https://arxiv.org/abs/2012.13852"
+                    class="badge bg-danger text-decoration-none ms-1"
+                    target="_blank"
+                    ><i class="bi bi-box-arrow-up-right"></i> Link</a
+                  >
+                </li>
+                <li class="mb-3">
+                  R. Chen and A. L. Liu.
+                  <strong
+                    >A Distributed Algorithm for Multi-stage Multi-scale
+                    Stochastic Programs with Application to Electricity Capacity
+                    Expansion.</strong
+                  >
+                </li>
+                <li class="mb-3">
+                  R. Chen and A. L. Liu.
+                  <strong
+                    >A Distributed Algorithm for N-block Non-linearly
+                    Constrained Convex Optimization Problems and Its
+                    Asynchronous Variant.</strong
+                  >
+                </li>
+                <li class="mb-3">
+                  Z. Zhao and A. L. Liu.
+                  <strong
+                    >Decentralized Demand Response Integration with Wholesale
+                    Electricity Markets via Multi-agent Bandit Games.</strong
+                  >
+                </li>
+              </ul>
+
+              <h4 id="selected" class="list-heading">Selected Publications</h4>
+              <ul class="list-unstyled mb-5" style="line-height: 1.8">
+                <li class="mb-3">
+                  J. H. Kim, J. S. Giraldo, P. V. Preckel, A. L. Liu, D. Gotham.
+                  <strong
+                    >Welfare Impact of Virtual Trading on Wholesale Electricity
+                    Markets.</strong
+                  >
+                  Accepted to <em>The Energy Journal</em>, 2024.
+                </li>
+                <li class="mb-3">
+                  Y. Chen, A. L. Liu, M. Tanaka, R. Takashima.
+                  <strong
+                    >Optimal Retail Tariff Design with Prosumers: Pursuing
+                    Energy Equity at the Expenses of Economic
+                    Efficiencies?</strong
+                  >
+                  <em
+                    >IEEE Transactions on Energy Markets, Policy and
+                    Regulation</em
+                  >, Vol. 1, No. 3, pp 198 -- 210, 2023.
+                  <a
+                    href="https://ieeexplore.ieee.org/document/10177234"
+                    class="badge bg-danger text-decoration-none ms-1"
+                    target="_blank"
+                    ><i class="bi bi-box-arrow-up-right"></i> Link</a
+                  >
+                </li>
+                <li class="mb-3">
+                  S. Ramyar, M. Tanaka, A. L. Liu and Y. Chen.
+                  <strong
+                    >Endogenous risk management of prosumers by distributionally
+                    robust chance-constrained optimization.</strong
+                  >
+                  <em
+                    >IEEE Transactions on Energy Markets, Policy and
+                    Regulation</em
+                  >, 2023.
+                  <a
+                    href="https://ieeexplore.ieee.org/document/10038580"
+                    class="badge bg-danger text-decoration-none ms-1"
+                    target="_blank"
+                    ><i class="bi bi-box-arrow-up-right"></i> Link</a
+                  >
+                </li>
+                <li class="mb-3">
+                  Z. Zhao, F. Chen and A. L. Liu.
+                  <strong
+                    >Comparisons of auction designs through multiagent learning
+                    in peer-to-peer energy trading.</strong
+                  >
+                  <em>IEEE Transactions on Smart Grid</em>, Vol. 14, No. 1, pp
+                  593 &ndash; 605, 2023.
+                  <a
+                    href="https://ieeexplore.ieee.org/document/9828543"
+                    class="badge bg-danger text-decoration-none ms-1"
+                    target="_blank"
+                    ><i class="bi bi-box-arrow-up-right"></i> Link</a
+                  >
+                </li>
+                <li class="mb-3">
+                  Z. Huang, Q Zheng and A. L. Liu.
+                  <strong
+                    >A nested cross decomposition algorithm for power system
+                    capacity expansion with multiscale uncertainties.</strong
+                  >
+                  <em>INFORMS Journal on Computing</em>. Vol. 34, No. 4, pp 1919
+                  &ndash; 1939, 2022.
+                  <a
+                    href="https://pubsonline.informs.org/doi/pdf/10.1287/ijoc.2022.1177"
+                    class="badge bg-danger text-decoration-none ms-1"
+                    target="_blank"
+                    ><i class="bi bi-box-arrow-up-right"></i> Link</a
+                  >
+                </li>
+                <li class="mb-3">
+                  J. Opgrand, P. V. Preckel, D. J. Gotham, and A. L. Liu.
+                  <strong
+                    >Price formation in auctions for financial transmission
+                    rights.</strong
+                  >
+                  <em>Energy Journal</em>. Vol. 43, No. 3, pp 33 &ndash; 57,
+                  2022.
+                  <a
+                    href="https://www.iaee.org/en/publications/ejarticle.aspx?id=3826"
+                    class="badge bg-danger text-decoration-none ms-1"
+                    target="_blank"
+                    ><i class="bi bi-box-arrow-up-right"></i> Link</a
+                  >
+                </li>
+                <li class="mb-3">
+                  R. Chen and A. L. Liu.
+                  <strong
+                    >A distributed algorithm for high-dimension convex
+                    quadratically constrained quadratic programs.</strong
+                  >
+                  <em>Computational Optimization and Applications</em>. Vol. 80,
+                  pp 781 &ndash; 830, 2021.
+                  <a
+                    href="https://link.springer.com/article/10.1007/s10589-021-00319-x"
+                    class="badge bg-danger text-decoration-none ms-1"
+                    target="_blank"
+                    ><i class="bi bi-box-arrow-up-right"></i> Link</a
+                  >
+                </li>
+                <li class="mb-3">
+                  H. Sreekumaran, A. R. Hotay, A. L. Liu, N. A. Uhan and S.
+                  Sundaram.
+                  <strong
+                    >Equilibrium strategies for multiple interdictors on a
+                    common network.</strong
+                  >
+                  <em>European Journal of Operations Research</em>. Vol. 288,
+                  No. 2, pp 523 &ndash; 538, 2021.
+                  <a
+                    href="https://www.sciencedirect.com/science/article/pii/S0377221720305415"
+                    class="badge bg-danger text-decoration-none ms-1"
+                    target="_blank"
+                    ><i class="bi bi-box-arrow-up-right"></i> Link</a
+                  >
+                </li>
+                <li class="mb-3">
+                  S. Ramyar, A. L. Liu and Y. Chen.
+                  <strong
+                    >A power market model in presence of strategic
+                    prosumers.</strong
+                  >
+                  <em>IEEE Transactions on Power Systems</em>, Online first,
+                  2019.
+                  <a
+                    href="https://ieeexplore.ieee.org/document/8815858"
+                    class="badge bg-danger text-decoration-none ms-1"
+                    target="_blank"
+                    ><i class="bi bi-box-arrow-up-right"></i> Link</a
+                  >
+                </li>
+                <li class="mb-3">
+                  A. L. Liu and Y. Chen.
+                  <strong
+                    >Price containment in emissions permit markets: Balancing
+                    market risk and environmental outcomes.</strong
+                  >
+                  <em>IISE Transactions</em>, Vol. 49, No. 12, pp 1129-1149,
+                  2017.
+                  <a
+                    href="http://www.tandfonline.com/doi/full/10.1080/24725854.2017.1362506"
+                    class="badge bg-danger text-decoration-none ms-1"
+                    target="_blank"
+                    ><i class="bi bi-box-arrow-up-right"></i> Link</a
+                  >
+                </li>
+                <li class="mb-3">
+                  L. Lu, P. V. Preckel, D. Gotham, and A. L. Liu.
+                  <strong
+                    >An assessment of alternative carbon mitigation policies for
+                    achieving the emissions reduction of the Clean Power Plan:
+                    Case study for the state of Indiana.</strong
+                  >
+                  <em>Energy Policy</em>, Vol. 96, pp 661-672, 2016.
+                  <a
+                    href="http://www.sciencedirect.com/science/article/pii/S0301421516303500"
+                    class="badge bg-danger text-decoration-none ms-1"
+                    target="_blank"
+                    ><i class="bi bi-box-arrow-up-right"></i> Link</a
+                  >
+                </li>
+                <li class="mb-3">
+                  V. Krishnan, J. Ho, B. H. Hobbs, A. L. Liu, J. D. McCalley, M.
+                  Shahidehpour, and Q. P. Zheng.
+                  <strong
+                    >Co-optimization of electricity transmission and generation
+                    resources for planning and policy analysis: Review of
+                    concepts and modeling approaches.</strong
+                  >
+                  <em>Energy Systems</em>, Vol. 7, No. 2, pp 297-332, 2016.
+                  <a
+                    href="https://www.researchgate.net/publication/281123009_Co-optimization_of_electricity_transmission_and_generation_resources_for_planning_and_policy_analysis_review_of_concepts_and_modeling_approaches"
+                    class="badge bg-danger text-decoration-none ms-1"
+                    target="_blank"
+                    ><i class="bi bi-box-arrow-up-right"></i> Link</a
+                  >
+                </li>
+                <li class="mb-3">
+                  Q. P. Zheng, J. Wang, and A. L. Liu.
+                  <strong
+                    >Stochastic optimization for unit commitment -- A
+                    review.</strong
+                  >
+                  <em>IEEE Transactions on Power System</em>, Vol. 30, No. 4, pp
+                  1913-1924, 2014.
+                  <a
+                    href="http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6912028"
+                    class="badge bg-danger text-decoration-none ms-1"
+                    target="_blank"
+                    ><i class="bi bi-box-arrow-up-right"></i> Link</a
+                  >
+                </li>
+                <li class="mb-3">
+                  A. L. Liu and B. F. Hobbs.
+                  <strong
+                    >Tacit collusion games in pool-based electricity markets
+                    under transmission constraints.</strong
+                  >
+                  <em>Mathematical Programming</em>, Series B, Vol. 140, No. 2,
+                  pp 351-379, 2013.
+                  <a
+                    href="https://link.springer.com/article/10.1007/s10107-013-0693-5"
+                    class="badge bg-danger text-decoration-none ms-1"
+                    target="_blank"
+                    ><i class="bi bi-box-arrow-up-right"></i> Link</a
+                  >
+                </li>
+                <li class="mb-3">
+                  Y. Chen and A. L. Liu.
+                  <strong
+                    >Emissions trading, point-of-regulation and facility siting
+                    choices in the electric markets.</strong
+                  >
+                  <em>Journal of Regulatory Economics</em>, online first, 2013.
+                  <a
+                    href="https://link.springer.com/article/10.1007/s11149-013-9224-9"
+                    class="badge bg-danger text-decoration-none ms-1"
+                    target="_blank"
+                    ><i class="bi bi-box-arrow-up-right"></i> Link</a
+                  >
+                </li>
+                <li class="mb-3">
+                  C. D. Davis, D. J. Gotham, P. V. Preckel and A. L. Liu.
+                  <strong
+                    >Determining the impact of wind on system costs via the
+                    temporal patterns of load and wind generation.</strong
+                  >
+                  <em>Energy Policy</em>, Vol. 60, pp 122-131, 2013.
+                  <a
+                    href="https://www.sciencedirect.com/science/article/pii/S0301421513003169"
+                    class="badge bg-danger text-decoration-none ms-1"
+                    target="_blank"
+                    ><i class="bi bi-box-arrow-up-right"></i> Link</a
+                  >
+                </li>
+                <li class="mb-3">
+                  L. S. Han and A. L. Liu.
+                  <strong>On Nash-Cournot games with price caps.</strong>
+                  <em>Operations Research Letters</em>, Vol. 41, pp 92 - 97,
+                  2013.
+                  <a
+                    href="https://www.sciencedirect.com/science/article/pii/S0167637712001423"
+                    class="badge bg-danger text-decoration-none ms-1"
+                    target="_blank"
+                    ><i class="bi bi-box-arrow-up-right"></i> Link</a
+                  >
+                </li>
+                <li class="mb-3">
+                  S. Huang, H. Safiullah, J. Xiao, B. Hodge, R. Hoffman, J.
+                  Soller, D. Jones, D. Dininger, W. E. Tyner, A. L. Liu, J. F.
+                  Pekny.
+                  <strong
+                    >The effects of electric vehicles in the City of
+                    Indianapolis.</strong
+                  >
+                  <em>Energy Policy</em>, Vol. 49, pp 442-455, 2012.
+                  <a
+                    href="https://www.sciencedirect.com/science/article/pii/S0301421512005496"
+                    class="badge bg-danger text-decoration-none ms-1"
+                    target="_blank"
+                    ><i class="bi bi-box-arrow-up-right"></i> Link</a
+                  >
+                </li>
+                <li class="mb-3">
+                  S. Huang, J. Xiao, J. F. Pekny, G. V. Reklaitis, and A. L.
+                  Liu.
+                  <strong
+                    >Quantifying system level benefits from distributed solar
+                    and energy storage.</strong
+                  >
+                  <em>Journal of Energy Engineering</em>, Vol. 138, No. 2, pp.
+                  33-42, 2012.
+                  <a
+                    href="https://ascelibrary.org/doi/10.1061/%28ASCE%29EY.1943-7897.0000064"
+                    class="badge bg-danger text-decoration-none ms-1"
+                    target="_blank"
+                    ><i class="bi bi-box-arrow-up-right"></i> Link</a
+                  >
+                </li>
+                <li class="mb-3">
+                  Y. Chen, A. L. Liu, B. F. Hobbs.
+                  <strong
+                    >Economic and emissions implications of load-based,
+                    source-based, and first-seller emissions trading programs
+                    under California AB32.</strong
+                  >
+                  <em>Operations Research</em>, Vol. 59, No. 3, pp. 696-712,
+                  2011.
+                  <a
+                    href="https://pubsonline.informs.org/doi/10.1287/opre.1110.0917"
+                    class="badge bg-danger text-decoration-none ms-1"
+                    target="_blank"
+                    ><i class="bi bi-box-arrow-up-right"></i> Link</a
+                  >
+                </li>
+                <li class="mb-3">
+                  J. E. Harrington, B. F. Hobbs, J.-S. Pang, A. Liu, G. Roch.
+                  <strong>Collusive game solutions via optimization.</strong>
+                  <em>Mathematical Programming</em>, Series B Vol. 104, pp
+                  407-435, 2005.
+                  <a
+                    href="https://link.springer.com/article/10.1007/s10107-005-0622-3"
+                    class="badge bg-danger text-decoration-none ms-1"
+                    target="_blank"
+                    ><i class="bi bi-box-arrow-up-right"></i> Link</a
+                  >
+                </li>
+              </ul>
+
+              <h4 id="proceedings" class="list-heading">
+                Refereed Conference Proceedings
+              </h4>
+              <ul class="list-unstyled mb-5" style="line-height: 1.8">
+                <li class="mb-3">
+                  J. He and A. L. Liu.
+                  <strong
+                    >Evaluating the Impact of Multiple DER Aggregators on
+                    Wholesale Energy Markets: A Hybrid Mean Field
+                    Approach.</strong
+                  >
+                  Accepted to <em>CIGRE Grid of the Future Symposium</em>,
+                  November 2024.
+                  <a
+                    href="https://arxiv.org/abs/2409.00107"
+                    class="badge bg-danger text-decoration-none ms-1"
+                    target="_blank"
+                    ><i class="bi bi-box-arrow-up-right"></i> Link</a
+                  >
+                </li>
+                <li class="mb-3">
+                  F. Chen, A. L. Liu, and Y. Chen.
+                  <strong
+                    >Decentralized Voltage Control with Peer-to-peer Energy
+                    Trading in a Distribution Network.</strong
+                  >
+                  Proceedings of the
+                  <em
+                    >56th Hawaii International Conference on System Sciences</em
+                  >, 2022.
+                  <a
+                    href="https://scholarspace.manoa.hawaii.edu/server/api/core/bitstreams/a2ed1c31-3975-4a2c-bb5d-73421eb66337/content"
+                    class="badge bg-danger text-decoration-none ms-1"
+                    target="_blank"
+                    ><i class="bi bi-box-arrow-up-right"></i> Link</a
+                  >
+                </li>
+                <li class="mb-3">
+                  Z. Zhao, A.L. Liu, and Y. Chen.
+                  <strong
+                    >Electricity Demand Response under Real-Time Pricing: A
+                    Multi-armed Bandit Game.</strong
+                  >
+                  Conference: 2018 Asia-Pacific Signal and Information
+                  Processing Association Annual Summit and Conference (APSIPA
+                  ASC), October 2018.
+                  <a
+                    href="https://www.researchgate.net/publication/331846720_Electricity_Demand_Response_under_Real-Time_Pricing_A_Multi-armed_Bandit_Game"
+                    class="badge bg-danger text-decoration-none ms-1"
+                    target="_blank"
+                    ><i class="bi bi-box-arrow-up-right"></i> Link</a
+                  >
+                </li>
+                <li class="mb-3">
+                  Z. Zhao and A. L. Liu.
+                  <strong
+                    >Intelligent demand response for electricity consumers: A
+                    multi-armed bandit game approach.</strong
+                  >
+                  Proceedings to
+                  <em
+                    >2017 International Conference on Intelligent Systems
+                    Applications to Power (ISAP)</em
+                  >, 2017.
+                  <a
+                    href="https://www.researchgate.net/publication/320650173_Intelligent_demand_response_for_electricity_consumers_A_multi-armed_bandit_game_approach"
+                    class="badge bg-danger text-decoration-none ms-1"
+                    target="_blank"
+                    ><i class="bi bi-box-arrow-up-right"></i> Link</a
+                  >
+                </li>
+                <li class="mb-3">
+                  H. Sreekumaran and A. L. Liu.
+                  <strong
+                    >Equilibrium wind hedge contract structure through Nash
+                    Bargaining.</strong
+                  >
+                  Proceedings of the Industrial Engineering Research Conference,
+                  2011.
+                  <a
+                    href="https://docs.lib.purdue.edu/dissertations/AAI1510306/"
+                    class="badge bg-danger text-decoration-none ms-1"
+                    target="_blank"
+                    ><i class="bi bi-box-arrow-up-right"></i> Link</a
+                  >
+                </li>
+                <li class="mb-3">
+                  J. Xiao, B. S. Hodge, A. L. Liu, J. F. Pekny, and G. V.
+                  Reklaitis.
+                  <strong
+                    >Long-term planning of wind farm siting in the electricity
+                    grid.</strong
+                  >
+                  Proceedings of 21st European Symposium on Computer Aided
+                  Process Engineering - ESCAPE 21, 2010.
+                </li>
+                <li class="mb-3">
+                  A. L. Liu.
+                  <strong
+                    >Repeated games in electricity spot and forward markets - An
+                    equilibrium modeling and computational framework.</strong
+                  >
+                  Proceedings of 48th Annual Allerton Conference on
+                  Communication, Control, and Computing, 2010.
+                </li>
+                <li class="mb-3">
+                  T. Brady and A. L. Liu.
+                  <strong
+                    >The analysis of electricity storage location sites in the
+                    electric transmission grid.</strong
+                  >
+                  Proceedings of the Industrial Engineering Research Conference,
+                  2010.
+                </li>
+                <li class="mb-3">
+                  Y. Chen and A. L. Liu.
+                  <strong
+                    >Effects of allowances allocation schemes on the emissions
+                    leakage and contract shuffling.</strong
+                  >
+                  Proceedings to 32nd IAEE International Conference, online
+                  publication, 2009.
+                </li>
+                <li class="mb-3">
+                  J. E. Harrington, B. F Hobbs, J.-S Pang, A. Liu, and G. Roch.
+                  <strong>Collusive game solutions via optimization.</strong>
+                  Proceedings of the NSF-ONR EPNES II workshop, 2003.
+                </li>
+              </ul>
+
+              <h4 id="books" class="list-heading">Refereed Book Chapters</h4>
+              <ul class="list-unstyled mb-5" style="line-height: 1.8">
+                <li class="mb-3">
+                  V. R. Bosquezfoti and A. L. Liu.
+                  <strong
+                    >Power Grid and Electrical Power System Security.</strong
+                  >
+                  <em>Springer Handbook of Automation (2nd ed.)</em>,
+                  editor-in-chief: Shimon Y. Nof, 2022.
+                </li>
+                <li class="mb-3">
+                  A. L. Liu, N. A. Uhan and F. Zhao.
+                  <strong
+                    >Scheduling for Energy Efficient Manufacturing.</strong
+                  >
+                  <em>Energy Efficient Manufacturing with Applications.</em>
+                  Editors: J. W. Sutherland and B. S. Linke, 2012.
+                </li>
+              </ul>
+
+              <h4 id="other" class="list-heading">Other Publications</h4>
+              <ul class="list-unstyled mb-0" style="line-height: 1.8">
+                <li class="mb-3">
+                  N. Chen, Y. Chen, J.-M. Goldman, A. L. Liu, and C.-H. Wang.
+                  <strong
+                    >Investigating Climate-change-induced Vulnerability of the
+                    Northern California Natural Gas Energy System and
+                    Identifying Resilience Options.</strong
+                  >
+                  Final project report to California Energy Commission, 2021.
+                  <a
+                    href="https://www.energy.ca.gov/publications/2021/increasing-resiliency-northern-california-natural-gas-system-reduce"
+                    class="badge bg-danger text-decoration-none ms-1"
+                    target="_blank"
+                    ><i class="bi bi-box-arrow-up-right"></i> Link</a
+                  >
+                </li>
+                <li class="mb-3">
+                  A. L. Liu, B. H. Hobbs, J. Ho, J. D. McCalley, V. Krishnan, M.
+                  Shahidehpour, and Q. P. Zheng.
+                  <strong
+                    >"White Paper: Co-optimization of Transmission and Other
+                    Supply Resources".</strong
+                  >
+                  Prepared for Eastern Interconnection States' Planning Council
+                  and National Association of Regulatory Utility Commissioners.
+                  <a
+                    href="http://pubs.naruc.org/pub/536D834A-2354-D714-51D6-AE55F431E2AA"
+                    class="badge bg-danger text-decoration-none ms-1"
+                    target="_blank"
+                    ><i class="bi bi-box-arrow-up-right"></i> Link</a
+                  >
+                </li>
+                <li class="mb-3">
+                  ICF International and A. L. Liu.
+                  <strong
+                    >"Study on long-term electric and natural gas infrastructure
+                    requirements in the Eastern Interconnection".</strong
+                  >
+                  Prepared for Eastern Interconnection States' Planning Council
+                  and National Association of Regulatory Utility Commissioners.
+                  <a
+                    href="http://pubs.naruc.org/pub.cfm?id=536DFAF7-2354-D714-512C-1BA1BBD00009"
+                    class="badge bg-danger text-decoration-none ms-1"
+                    target="_blank"
+                    ><i class="bi bi-box-arrow-up-right"></i> Link</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <div id="footer-placeholder"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
-</body>
+  </body>
 </html>
