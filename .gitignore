@@ -1,0 +1,23 @@
+# --- Operating System Files ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Development Tools ---
+.vscode/
+.idea/
+*.swp
+*.log
+
+# --- Video Assets (Optional) ---
+# Large video files are often better hosted on YouTube/Vimeo
+# but if you want to keep them out of Git to save space, uncomment below:
+# video/intro.mp4
+
+# --- Node/Dependencies (If you use them later) ---
+node_modules/
+package-lock.json
+
+# --- Temporary/Backup Files ---
+*.bak
+*.tmp
