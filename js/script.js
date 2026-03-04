@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Highlight the active page
             let currentPath = window.location.pathname.split("/").pop();
-            if (currentPath === "" || currentPath === "index.html") currentPath = "./";
+            if (currentPath === "" || currentPath === "index.html") currentPath = "/";
             
             document.querySelectorAll('.nav-link').forEach(link => {
                 if (link.getAttribute('href') === currentPath) {
